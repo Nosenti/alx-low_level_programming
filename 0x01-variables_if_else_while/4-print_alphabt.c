@@ -6,13 +6,13 @@
 
 int main(void)
 {
-	int i = 97;
+	char i = 'a';
 
-	while (i <= 122)
+	while (i <= 'z')
 	{
-		if (i != 113 && i != 117)
+		if (i != 'q' && i != 'u')
 		{
-			putchar("%c", i);
+			putchar(i);
 		}
 		i++;
 	}
