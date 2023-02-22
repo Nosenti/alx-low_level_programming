@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _abs - compute cbsolute value
+ * @c: parameter int
  * Return: int
  */
 
