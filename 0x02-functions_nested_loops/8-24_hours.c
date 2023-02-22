@@ -4,7 +4,7 @@
  * Return: integer
  */
 
-int jack_bauer(void)
+void jack_bauer(void)
 {
 
 }
