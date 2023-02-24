@@ -2,6 +2,7 @@
 
 /**
  * print_line - prints line
+ * @n: int parameter
  * Return: void
  */
 
@@ -16,8 +17,5 @@ void print_line(int n)
 			_putchar('_');
 		}
 	}
-	else
-	{
-		_putchar('\n');
-	}
+	_putchar('\n');
 }
