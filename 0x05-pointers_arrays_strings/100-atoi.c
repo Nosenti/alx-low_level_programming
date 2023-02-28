@@ -10,6 +10,10 @@ int _atoi(char *s)
 {
 	int result, sign, i;
 
+	result = 0;
+	sign = 1;
+	i = 0;
+
 	while (s[i] == ' ')
 	{
 		i++;
