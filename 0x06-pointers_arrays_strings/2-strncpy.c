@@ -5,7 +5,7 @@
  * @dest: destination
  * @src: source
  * @n: length of the string
- * Return: string
+ * Return: pointer to a string
  */
 
 char *_strncpy(char *dest, char *src, int n)
@@ -15,6 +15,10 @@ char *_strncpy(char *dest, char *src, int n)
 	for (i = 0; i < n; i++)
 	{
 		dest[i] = src[i];
+	}
+	for (; i < n; i++)
+	{
+		dest[i] = '\0';
 	}
 	return (dest);
 }
