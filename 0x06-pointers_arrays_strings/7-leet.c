@@ -9,9 +9,8 @@
 char *leet(char *str)
 {
 	int i, j;
-	char ltable[];
+	char ltable[] = "aAeEoOtTlL44377011";
 
-	ltable = "aAeEoOtTlL44377011";
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (j = 0; j < 10; j++)
