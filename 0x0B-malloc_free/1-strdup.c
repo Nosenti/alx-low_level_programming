@@ -10,31 +10,30 @@
 
 char *_strdup(char *str)
 {
-	char *cpy;
 	int len, i;
+	char *cpy;
 
-	len = 0;
-
-	for (i = 0; *str != '\0'; i++)
-	{
-		len++;
-	}
-
+	len = 1;
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
-	if (str)
+	for (i = 0; *str != '\0'; i++)
 	{
-		cpy = malloc(sizeof(char) * len + 1);
-		
-		for (i = 0; i < len; i++)
-		{
-			cpy[i] = str[i];
-		}
-		cpy[len] = '\0';
-		return (cpy);
+		len++;
 	}
-	return (NULL)
+	cpy = (char *) malloc(sizeof(char) * len);
+	if (cpy == NULL)
+	{
+		return (NULL);
+	}
+	i = 0;
+	while (str[i] != '\0')
+	{
+		cpy[i] = str[i];
+		i++;
+	}
+	cpy[i] = '\0';
+	return (cpy);
+
 }
