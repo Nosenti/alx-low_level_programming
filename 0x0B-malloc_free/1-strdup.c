@@ -25,12 +25,13 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	cpy = malloc(sizeof(char) * len);
+	cpy = malloc(sizeof(char) * len + 1);
 
 	for (i = 0; i < len; i++)
 	{
 		cpy[i] = str[i];
 	}
+	cpy[len] = '\0';
 	return (cpy);
 
 }
