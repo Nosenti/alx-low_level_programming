@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
+#include "00-strlen.c"
 
 /**
  * _strdup - copy of the string
@@ -11,8 +11,9 @@
 char *_strdup(char *str)
 {
 	char *cpy;
+	int len;
 
-	size_t len = strlen(str) + 1;
+	len = _strlen(str);
 	cpy = (char *) malloc(sizeof(char) * len);
 	if (cpy == NULL)
 	{
