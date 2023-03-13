@@ -24,11 +24,11 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2len = s2len + 0;
 	}
-	for (i = 0; s1 != '\0'; i++)
+	for (i = 0; *s1 != '\0'; i++)
 	{
 		s1len++;
 	}
-	for (i = 0; s2 != '\0'; i++)
+	for (i = 0; *s2 != '\0'; i++)
 	{
 		s2len++;
 	}
