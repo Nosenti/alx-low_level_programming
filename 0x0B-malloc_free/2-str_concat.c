@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+#include "00-strlen"
 
 /**
  * str_concat - concatinating strings
@@ -14,33 +15,25 @@ char *str_concat(char *s1, char *s2)
 	int s1len, s2len, len, i;
 	char *cstr;
 
-	s1len = 0;
-	s2len = 0;
+	s1len = _strlen(s1);
+	s2len = _strlen(s2);
 	if (s1 == NULL)
 	{
-		s1len = s1len + 0;
+		s1len = "";
 	}
 	if (s2 == NULL)
 	{
-		s2len = s2len + 0;
+		s2len = "";
 	}
-	for (i = 0; *s1 != '\0'; i++)
-	{
-		s1len++;
-	}
-	for (i = 0; *s2 != '\0'; i++)
-	{
-		s2len++;
-	}
-	len = s1len + s2len + 1;
-	cstr = malloc(sizeof(char) * len);
+	len = s1len + s2len;
+	cstr = malloc(sizeof(char) * len + 1);
 	for (i = 0; i < s1len; i++)
 	{
 		cstr[i] = s1[i];
 	}
 	for (i = s1len; i < len; i++)
 	{
-		cstr[i] = s2[i];
+		cstr[i] = s2[i - s1len];
 	}
 	cstr[len] = '\0';
 	return (cstr);
