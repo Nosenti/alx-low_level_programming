@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#include "00-strlen"
+#include "00-strlen.c"
 
 /**
  * str_concat - concatinating strings
