@@ -3,7 +3,10 @@
 #include "main.h"
 
 /**
- * main function
+ * main - function
+ * @argc: args count
+ * @argv: args
+ * Return: integer
  */
 
 int main(int argc, char *argv[])
