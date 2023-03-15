@@ -10,13 +10,13 @@
 
 int main(int argc, char *argv[])
 {
-	int coins, cents;
-
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	int coins, cents;
+
 	coins = 0;
 	cents = atoi(argv[1]);
 	if (cents < 0)
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	coins = coins + cents / 2;
 	cents = cents % 2;
 
-	coins = coins + cents / 1;
+	coins = coins + cents;
 
 	printf("%d\n", coins);
 
