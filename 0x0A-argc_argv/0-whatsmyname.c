@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * whatsmyname: print the name of the program
+ * main - print the name of the program
  * @argc: size of parameters
  * @argv: arrays of string parameters
  * Return: void
