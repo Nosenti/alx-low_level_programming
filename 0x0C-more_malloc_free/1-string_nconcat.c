@@ -1,60 +1,48 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
 #include "main.h"
-#include "2-strlen.c"
 
 /**
- * string_nconcat - concatenates two strings
- * @s1: first string
- * @s2: second string
- * @n: n bytes of s2
- * Return: pointer or NULL
+ * string_nconcat - concatenate two strings
+ * @s1: the first string
+ * @s2: the second string
+ * @n: the maximum number of bytes to use from s2
+ *
+ * Description: Copy s1 followed by the first n bytes of s2 into dynamically
+ * allocated memory, and append a terminating null-byte. If n is greater than
+ * or equal to the length of the string s2, use only the bytes from s2 up to
+ * it's terminating null-byte. Treat NULL as an an empty string.
+ *
+ * Return: If memory allocation fails, return NULL. Otherwise, return a pointer
+ * to the first character of the new string.
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
-	char *newstr;
-	unsigned int s1len, s2len;
-	
-	s1len = 0;
-	s2len = 0;
-	if (s1 == NULL)
-	{
-		s1len = 0;
-	}
-	if (s2 == NULL)
-	{
-		s2len = 0;
-	}
-	if (n >= s2len)
-	{
-		n = s2len;
-	}
+	char *cat;
+	unsigned int s1_len = 0;
+	unsigned int s2_len = 0;
+
 	if (s1)
 	{
-		while (s1[s1len])
-			++s1len;
+		while (s1[s1_len])
+			++s1_len;
 	}
+
 	if (s2)
 	{
-		while (s2[s2len])
-			++s2len;
+		while (s2_len < n && s2[s2_len])
+			++s2_len;
 	}
-	newstr = malloc(sizeof(char) * s1len + n + 1);
-	if (!newstr)
-	{
+
+	cat = malloc(sizeof(char) * s1_len + s2_len + 1);
+	if (!cat)
 		return (NULL);
-	}
-	for (i = 0; i < s1len; i++)
-	{
-		newstr[i] = s1[i];
-	}
-	for (i = s1len - 1; i < s1len + n; i++)
-	{
-		newstr[i] = s2[i - s1len];
-	}
-	newstr[s1len + n] = '\0';
-	return (newstr);
+
+	for (n = 0; n < s1_len; ++n, ++cat)
+		*cat = s1[n];
+
+	for (n = 0; n < s2_len; ++n, ++cat)
+		*cat = s2[n];
+
+	*cat = '\0';
+
+	return (cat - s1_len - s2_len);
 }
