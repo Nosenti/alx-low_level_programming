@@ -16,10 +16,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
 	char *newstr;
-	unsigned int s2len, s1len;
+	unsigned int s1len, s2len;
 	
-	s1len = UINT_MAX + 1 + _strlen(s1);
-	s2len = UINT_MAX + 1 + _strlen(s2);
+	s1len = 0;
+	s2len = 0;
 	if (s1 == NULL)
 	{
 		s1len = 0;
@@ -31,6 +31,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= s2len)
 	{
 		n = s2len;
+	}
+	if (s1)
+	{
+		while (s1[s1len])
+			++s1len;
+	}
+	if (s2)
+	{
+		while (s2[s2len])
+			++s2len;
 	}
 	newstr = malloc(sizeof(char) * s1len + n + 1);
 	if (!newstr)
