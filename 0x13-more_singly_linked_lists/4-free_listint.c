@@ -13,10 +13,16 @@ void free_listing(listint_t *head)
 
 	currNode = head;
 
+	if (currNode == NULL)
+	{
+		return;
+	}
+
 	while (currNode != NULL)
 	{
 		next = currNode->next;
 		free(currNode);
 		currNode = next;
 	}
+	head = NULL;
 }
