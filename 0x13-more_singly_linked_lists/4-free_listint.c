@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void free_listing(listint_t *head)
+void free_listint(listint_t *head)
 {
 	listint_t *currNode;
 	listint_t *next;
