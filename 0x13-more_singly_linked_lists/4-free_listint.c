@@ -24,5 +24,4 @@ void free_listing(listint_t *head)
 		free(currNode);
 		currNode = next;
 	}
-	head = NULL;
 }
