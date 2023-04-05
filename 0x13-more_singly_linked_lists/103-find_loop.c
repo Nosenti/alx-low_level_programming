@@ -8,10 +8,6 @@
 
 listint_t *find_listint_loop(listint_t *head)
 {
-	if (head == NULL)
-	{
-		return (NULL);
-	}
 	listint_t *firstPtr = head;
 	listint_t *secondPtr = head->next;
 
