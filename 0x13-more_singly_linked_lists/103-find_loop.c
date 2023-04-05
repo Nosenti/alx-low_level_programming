@@ -13,12 +13,10 @@ listint_t *find_listint_loop(listint_t *head)
 		return (NULL);
 	}
 	listint_t *firstPtr = head;
-	listint_t *secondPtr = head;
+	listint_t *secondPtr = head->next;
 
 	while (firstPtr != NULL && secondPtr != NULL)
 	{
-		firstPtr = firstPtr->next;
-		secondPtr = secondPtr->next->next;
 		if (firstPtr == secondPtr)
 		{
 			return (firstPtr);
