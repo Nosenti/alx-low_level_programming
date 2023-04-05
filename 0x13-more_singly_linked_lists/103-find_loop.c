@@ -21,6 +21,12 @@ listint_t *find_listint_loop(listint_t *head)
 		secondPtr = secondPtr->next->next;
 		if (firstPtr == secondPtr)
 		{
+			firstPtr = head;
+			while (firstPtr != secondPtr)
+			{
+				firstPtr = firstPtr->next;
+				secondPtr = secondPtr->next->next;
+			}
 			return (firstPtr);
 		}
 	}
