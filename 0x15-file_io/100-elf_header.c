@@ -1,8 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include "main.h"
 #include <elf.h>
+
+/**
+ * print_elf_header - print header
+ * @header: header
+ * Return: void
+ */
 
 void print_elf_header(Elf64_Ehdr *header) {
     printf("Magic:   ");
@@ -32,6 +35,13 @@ void print_elf_header(Elf64_Ehdr *header) {
     printf("Entry point address:               ");
     printf("%#018lx\n", header->e_entry);
 }
+
+/**
+ * main - main function
+ * @argc: args count
+ * @argv: args vector
+ * Return: int
+ */
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
