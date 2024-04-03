@@ -3,3 +3,4 @@ SRC := main.c school.c
 EXECUTABLE := school
 all:
 	$(CC) $(SRC) -o $(EXECUTABLE)
+
